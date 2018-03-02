@@ -12,57 +12,48 @@ $(document).ready(function(){
       $('#animalButton').append(newTopic);
     }
   }
-
-  $('#addAnimal').on('click', function(event){
-      event.preventDefault();
-      var newerTopic = $('#animal-input').val().trim();
-      topics.push(newerTopic);
-      createButtons();
-      $('#animal-input').val('');
   
-    });
-
   createButtons();
+
+  function createNewButtons(){
+      $('#addAnimal').on('click', function(event){
+        var newTopic = $('#animal-input').val().trim();
+        topics.push(newTopic);
+        $('#animal-input').val('');
+        createButtons();
+        return false;
+      })
+  }
+  
+  createNewButtons();
 	
-	$('.newButton').on('click', function(){
-      
+  function createGifs (){
     	var gif = $(this).attr("data-name");
-      
     	console.log(gif);
-    
     	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gif + "&api_key=sBn0KqtEYhmnymUFZfTMzQVVRtggNUrF&limit=10";
-    
     	$.ajax({
           url: queryURL,
           method: "GET"
       	})
-
       	.then(function(response) {
-      	
       		var results = response.data;
-
       		console.log(response);
           $('#animals').empty();
       		for (var i = 0; i < results.length; i++){
-
-
       			var imgDiv = $("<div class='item'>");
-
       			var gifRating = results[i].rating;
-
       			var p = $('<p>').text('Rating: ' + gifRating);
-
         		var gifImage = $("<img>");
-        
         		gifImage.attr('src', results[i].images.fixed_height.url);
-
         		imgDiv.prepend(gifImage);
             imgDiv.append(p);
         		$('#animals').prepend(imgDiv);
         	}
         });
-    });
-
+  }
+      
+  $(document).on('click', '.newButton', createGifs);
+  
 })
 
    
