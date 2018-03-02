@@ -15,9 +15,9 @@ $(document).ready(function(){
 
   $('#addAnimal').on('click', function(event){
       event.preventDefault();
-      var newTopic = $('#animal-input').val().trim();
-      topics.push(newTopic);
-      createButtons(newTopic);
+      var newerTopic = $('#animal-input').val().trim();
+      topics.push(newerTopic);
+      createButtons();
       $('#animal-input').val('');
   
     });
