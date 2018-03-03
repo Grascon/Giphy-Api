@@ -44,16 +44,29 @@ $(document).ready(function(){
       			var gifRating = results[i].rating;
       			var p = $('<p>').text('Rating: ' + gifRating);
         		var gifImage = $("<img>");
-        		gifImage.attr('src', results[i].images.fixed_height.url);
+        		gifImage.attr('src', results[i].images.fixed_height_still.url);
+            gifImage.addClass("gif");
         		imgDiv.prepend(gifImage);
             imgDiv.append(p);
         		$('#animals').prepend(imgDiv);
         	}
         });
   }
-      
+
   $(document).on('click', '.newButton', createGifs);
-  
+  $('body').on('click', '.gif', function() {
+    var src = $(this).attr("src");
+    if($(this).hasClass('playing')){
+     //stop
+     $(this).attr('src', src.replace(/\.gif/i, "_s.gif"))
+     $(this).removeClass('playing');
+    } else {
+    //play
+    $(this).addClass('playing');
+    $(this).attr('src', src.replace(/\_s.gif/i, ".gif"))
+    }
+  });
+ 
 })
 
    
