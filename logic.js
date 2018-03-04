@@ -27,6 +27,7 @@ $(document).ready(function(){
   function createNewButtons(){
       $('#addAnimal').on('click', function(event){
         var newTopic = $('#animal-input').val().trim();
+        $('#animal-input').val('');
         if (newTopic == ''){
           alert('Please type an Animal');
           return false;
@@ -34,7 +35,6 @@ $(document).ready(function(){
         topics.push(newTopic);
         createButtons();
         return false;
-        $('#animal-input').empty();
       })
   }
 
