@@ -1,11 +1,17 @@
+body, html {
+	height: 100%;
+}
 body {
 	background-color: black;
 	font-family: 'Anton', sans-serif;
 	font-size: 16px;
 }
+.container {
+	margin: 0px auto;
+}
 .col-lg-12 {
 	text-align: center;
-	margin: 0px 5px;
+
 }
 h1 {
 	font-family: 'Anton', sans-serif;
@@ -15,8 +21,9 @@ h1 {
     text-decoration-color: orangered;
 }
 .item {
-	float: left;
-    margin: 10px;
+	
+	margin: 10px;
+	margin-bottom: 40px;
 }
 img {
 	width: 200px;
@@ -30,7 +37,7 @@ p {
 	text-decoration: underline;
     text-decoration-color: orangered;
 }
-.btn-default {
+.btn {
 	background-color: orangered;
 	color: white;
     margin: 5px;
@@ -44,4 +51,18 @@ p {
 h3{
 	margin-left: 10px;
     color: white;
+}
+#animal-form {
+	text-align: center;
+}
+#animals {
+	
+}
+.footer {
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	background-color: orangered;
+	color: white;
+	text-align: center
 }

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Animal Gifs</title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
@@ -19,27 +20,28 @@
 		</div>
 		<div class="row">
 			<div class="col-lg-12">
-				<div id="animalButton">
-				</div>
+				<div id="animalButton"></div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-md-10">
-				<div id="animals">
-				</div>
-			</div>
-			<div class="col-md-2">
+		<div class="row"
+			<div class="col-lg-12">
 				<div id="submit-form">
 					<form id="animal-form">
 						<label for="animal-input"><h3>Add an Animal</h3></label>
 						<br>
 						<input type="text" id="animal-input" >
 						<br>
-						<input id="addAnimal" type="submit" value="Submit" class="form-control" placeholder="Username">
+						<button class="btn" id="addAnimal" type="submit" value="Submit" class="form-control" placeholder="Username">Submit</button>
 					</form>
 				</div>
 			</div>
 		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<div id="animals"></div>
+			</div>
+		</div>
 	</div>
+	<div class="footer"><h5>&copy Copyright Animal Gifs App 2018</h5></div>
 </body>
 </html>
